@@ -51,7 +51,7 @@ class Bot(commands.Bot):
         Bot.conversation.append({ 'role': 'user', 'content': content })
         print(content)
 
-        response = gpt3_completion(Bot.conversation)
+        response = gpt3_completion(list(Bot.conversation))
         print('DOGGIEBRO:' , response)
 
         if(Bot.conversation.count({ 'role': 'assistant', 'content': response }) == 0):
